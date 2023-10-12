@@ -36,6 +36,9 @@ Route::post('login',[UserController::class,'login']);
 
 
 Route::get('properties/{id}',[PropertyController::class,'show']);
+Route::get('properties',[PropertyController::class,'index']);
+
+
 // Login User Using Token
 Route::middleware('auth:sanctum')->group(function () {
     // ROUTING USERS
@@ -45,7 +48,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // ROUTING PROPERTIES
     Route::post('properties',[PropertyController::class,'store']);
-    Route::get('properties',[PropertyController::class,'index']);
+    //Route::get('properties',[PropertyController::class,'index']);
     //Route::get('properties/{id}',[PropertyController::class,'show']);
     Route::put('properties/{id}',[PropertyController::class,'update']);
     Route::delete('properties/{id}',[PropertyController::class,'destroy']);
