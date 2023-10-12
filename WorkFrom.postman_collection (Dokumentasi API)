@@ -1,0 +1,2824 @@
+{
+	"info": {
+		"_postman_id": "e4666b49-29bf-4d3b-b235-70c2d4c22397",
+		"name": "WorkFrom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29947879"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "Buyer",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "buyer@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "buyer",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "083232132314",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "rizkyaa",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "rizkyaa@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "rizky123",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "083812721450",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/register",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:55:27 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:55:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Sukses membuat akun\",\n    \"data\": {\n        \"username\": \"rizkyaa\",\n        \"email\": \"rizkyaa@gmail.com\",\n        \"phone_number\": \"083812721450\"\n    }\n}"
+						},
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "rizkyaa",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "rizkyaa@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "rizky123",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "phone_number",
+											"value": "083812721450",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/register",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:56:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:56:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Proses validasi gagal\",\n    \"data\": {\n        \"email\": [\n            \"The email has already been taken.\"\n        ],\n        \"phone_number\": [\n            \"The phone number field is required.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "rizkyaa@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "rizky123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "rizkyaa@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "rizky123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/login",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:56:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:56:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Berhasil Login\",\n    \"token\": \"1|rIUa3MhMAlPizZjiTy0ui7YcAG6A6Mh09GPxUm0saef67963\"\n}"
+						},
+						{
+							"name": "Failed Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "rizkyaa@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "rizky1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/login",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:57:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:57:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Email dan Password yang dimasukkan tidak sesuai\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Current User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|rIUa3MhMAlPizZjiTy0ui7YcAG6A6Mh09GPxUm0saef67963",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/current-user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"current-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Current User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/current-user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"current-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:58:31 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:58:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"data\": {\n        \"id\": 1,\n        \"username\": \"rizkyaa\",\n        \"email\": \"rizkyaa@gmail.com\",\n        \"phone_number\": \"083812721450\",\n        \"role_id\": null,\n        \"created_at\": \"2023-10-11T07:55:27.000000Z\",\n        \"updated_at\": \"2023-10-11T07:56:05.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Failed Access Current User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/current-user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"current-user"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:58:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:58:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Token tidak valid\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "17|4tw7qGpY7iLIYr6le0khNjYeCRPA8vj20XaHhOBS4115272a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "rizkyalarief13@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "rizky321",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/update-user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"update-user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Update User",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "rizkyalarief13@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/update-user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"update-user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 08:00:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 08:00:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Berhasil update akun\"\n}"
+						},
+						{
+							"name": "Failed Update User",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "rizkyalarief13@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "rizky321",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/update-user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"update-user"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:58:59 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 07:58:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Token tidak valid\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|rIUa3MhMAlPizZjiTy0ui7YcAG6A6Mh09GPxUm0saef67963",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Logout",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/logout",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 02:29:45 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 02:29:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Berhasil logout\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Properties",
+			"item": [
+				{
+					"name": "Property List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|rIUa3MhMAlPizZjiTy0ui7YcAG6A6Mh09GPxUm0saef67963",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/properties",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"properties"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "100000000",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Property List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/properties",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "100000000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 10:57:41 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 10:57:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data property ditemukan\",\n    \"data\": [\n        {\n            \"id\": 4,\n            \"user_id\": 1,\n            \"name\": \"Anaya\",\n            \"building_name\": \"Mawar\",\n            \"domicile\": \"Jakarta\",\n            \"address\": \"Jl. Prapanca Raya No.3, RT.11/RW.1, Petogogan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12170\",\n            \"price\": 6000000,\n            \"capacity\": 60,\n            \"description\": \"Anayais located at the Mawar Building where there are many complete facilities for important activities.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T10:38:04.000000Z\",\n            \"updated_at\": \"2023-10-11T10:38:04.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 1,\n            \"name\": \"Azzahra\",\n            \"building_name\": \"Cempaka\",\n            \"domicile\": \"Medan\",\n            \"address\": \"Jl. Iskandar Muda No.7, Petisah Hulu, Kec. Medan Baru, Kota Medan, Sumatera Utara 20153\",\n            \"price\": 5000000,\n            \"capacity\": 55,\n            \"description\": \"Azzahra is located at the Cempaka Hotel where there are many complete facilities for important meetings and meetings 2 floors 1 Bathroom 3 Rooms 1 Kitchen\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T10:25:30.000000Z\",\n            \"updated_at\": \"2023-10-11T10:25:30.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 1,\n            \"name\": \"Baihaqi\",\n            \"building_name\": \"Anggrek\",\n            \"domicile\": \"Jakarta\",\n            \"address\": \"Jl. Panglima Polim I No.51A, RT.1/RW.3, Melawai, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12160\",\n            \"price\": 7000000,\n            \"capacity\": 65,\n            \"description\": \"Baihaqi is located at the Anggrek Hotel where there are many complete facilities for important meetings.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T10:36:24.000000Z\",\n            \"updated_at\": \"2023-10-11T10:36:24.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"user_id\": 3,\n            \"name\": \"Cynthia\",\n            \"building_name\": \"Dahlia\",\n            \"domicile\": \"Surabaya\",\n            \"address\": \"Jl. Kusuma Bangsa No.14, Gubeng, Surabaya, Jawa Timur 60281\",\n            \"price\": 5500000,\n            \"capacity\": 50,\n            \"description\": \"Cynthia is located at the Dahlia Hotel with great facilities for important meetings.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T11:00:00.000000Z\",\n            \"updated_at\": \"2023-10-11T11:00:00.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"user_id\": 1,\n            \"name\": \"Darma\",\n            \"building_name\": \"Sakura\",\n            \"domicile\": \"Bandung\",\n            \"address\": \"Jl. Cihampelas No.143, Cipaganti, Bandung Wetan, Kota Bandung, Jawa Barat 40131\",\n            \"price\": 6500000,\n            \"capacity\": 55,\n            \"description\": \"Darma is located at the Sakura Building with spacious meeting rooms and modern amenities.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T11:15:00.000000Z\",\n            \"updated_at\": \"2023-10-11T11:15:00.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"user_id\": 3,\n            \"name\": \"Elisa\",\n            \"building_name\": \"Melati\",\n            \"domicile\": \"Surabaya\",\n            \"address\": \"Jl. Pucang Anom Barat 1 No.3, Pucang Sewu, Surabaya, Jawa Timur 60282\",\n            \"price\": 5000000,\n            \"capacity\": 45,\n            \"description\": \"Elisa is located at the Melati Hotel, suitable for small meetings and gatherings.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T11:30:00.000000Z\",\n            \"updated_at\": \"2023-10-11T11:30:00.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"user_id\": 3,\n            \"name\": \"Farid\",\n            \"building_name\": \"Kenanga\",\n            \"domicile\": \"Medan\",\n            \"address\": \"Jl. Gatot Subroto No.11, Petisah Hulu, Medan Petisah, Kota Medan, Sumatera Utara 20111\",\n            \"price\": 7500000,\n            \"capacity\": 70,\n            \"description\": \"Farid is situated at the Kenanga Building with spacious rooms and excellent amenities for important events.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T11:45:00.000000Z\",\n            \"updated_at\": \"2023-10-11T11:45:00.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"user_id\": 1,\n            \"name\": \"Gadara\",\n            \"building_name\": \"Kemuning\",\n            \"domicile\": \"Bogor\",\n            \"address\": \"Komplek KPP IPB 3, Jl. Danau Tondano No.III, Tegallega, Bogor City, West Java 16129\",\n            \"price\": 10000000,\n            \"capacity\": 90,\n            \"description\": \"Gadata located at Central Bogor where there are many complete facilities for important activities.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T10:55:11.000000Z\",\n            \"updated_at\": \"2023-10-11T10:55:11.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"user_id\": 1,\n            \"name\": \"Grace\",\n            \"building_name\": \"Bougainvillea\",\n            \"domicile\": \"Jakarta\",\n            \"address\": \"Jl. Raya Pasar Minggu No.61, RT.5/RW.5, Pancoran, Kec. Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12780\",\n            \"price\": 6000000,\n            \"capacity\": 60,\n            \"description\": \"Grace is located at the Bougainvillea Hotel with excellent facilities for meetings and conferences.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T12:00:00.000000Z\",\n            \"updated_at\": \"2023-10-11T12:00:00.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"user_id\": 3,\n            \"name\": \"Hadi\",\n            \"building_name\": \"Orchid\",\n            \"domicile\": \"Bandung\",\n            \"address\": \"Jl. Sumatera No.8, Sumur Bandung, Bandung Wetan, Kota Bandung, Jawa Barat 40113\",\n            \"price\": 5500000,\n            \"capacity\": 50,\n            \"description\": \"Hadi is situated at the Orchid Building, ideal for small gatherings and workshops.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T12:15:00.000000Z\",\n            \"updated_at\": \"2023-10-11T12:15:00.000000Z\"\n        },\n        {\n            \"id\": 14,\n            \"user_id\": 1,\n            \"name\": \"Ismail\",\n            \"building_name\": \"Lily\",\n            \"domicile\": \"Surabaya\",\n            \"address\": \"Jl. Mulyosari Pratama No.32, Mulyosari, Surabaya, Jawa Timur 60111\",\n            \"price\": 7000000,\n            \"capacity\": 65,\n            \"description\": \"Ismail is located at the Lily Hotel with well-equipped meeting rooms.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T12:30:00.000000Z\",\n            \"updated_at\": \"2023-10-11T12:30:00.000000Z\"\n        },\n        {\n            \"id\": 15,\n            \"user_id\": 3,\n            \"name\": \"Jihan\",\n            \"building_name\": \"Tulip\",\n            \"domicile\": \"Medan\",\n            \"address\": \"Jl. Gatot Subroto No.19, Petisah Ulu, Medan Kota, Kota Medan, Sumatera Utara 20113\",\n            \"price\": 8000000,\n            \"capacity\": 75,\n            \"description\": \"Jihan is situated at the Tulip Building with spacious conference rooms and modern amenities.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T12:45:00.000000Z\",\n            \"updated_at\": \"2023-10-11T12:45:00.000000Z\"\n        },\n        {\n            \"id\": 16,\n            \"user_id\": 1,\n            \"name\": \"Kamil\",\n            \"building_name\": \"Rose\",\n            \"domicile\": \"Jakarta\",\n            \"address\": \"Jl. Mampang Prapatan Raya No.7, RT.10/RW.3, Mampang Prapatan, Kec. Mampang Prapatan, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12790\",\n            \"price\": 7500000,\n            \"capacity\": 70,\n            \"description\": \"Kamil is located at the Rose Hotel with versatile meeting spaces and modern facilities.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T13:00:00.000000Z\",\n            \"updated_at\": \"2023-10-11T13:00:00.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"user_id\": 1,\n            \"name\": \"Konaga\",\n            \"building_name\": \"Kamboja\",\n            \"domicile\": \"Bandung\",\n            \"address\": \"Jl. Prapanca Raya No.3, RT.11/RW.1, Petogogan, Kec. Kby. Baru, Bandung\",\n            \"price\": 11000000,\n            \"capacity\": 140,\n            \"description\": \"Konaga located at the Kamboja Hotel where there are many complete facilities for important activities.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T10:53:56.000000Z\",\n            \"updated_at\": \"2023-10-11T10:53:56.000000Z\"\n        },\n        {\n            \"id\": 17,\n            \"user_id\": 1,\n            \"name\": \"Liana\",\n            \"building_name\": \"Sunflower\",\n            \"domicile\": \"Surabaya\",\n            \"address\": \"Jl. Wonokromo No.41, Wonokromo, Surabaya, Jawa Timur 60243\",\n            \"price\": 6000000,\n            \"capacity\": 60,\n            \"description\": \"Liana is situated at the Sunflower Building with convenient meeting rooms and amenities.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T13:15:00.000000Z\",\n            \"updated_at\": \"2023-10-11T13:15:00.000000Z\"\n        },\n        {\n            \"id\": 18,\n            \"user_id\": 3,\n            \"name\": \"Nadia\",\n            \"building_name\": \"Tulip\",\n            \"domicile\": \"Surabaya\",\n            \"address\": \"Jl. Kertajaya Indah Timur No.5, Kertajaya, Surabaya, Jawa Timur 60114\",\n            \"price\": 5500000,\n            \"capacity\": 50,\n            \"description\": \"Nadia is located at the Tulip Hotel with facilities for small meetings and gatherings.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T13:30:00.000000Z\",\n            \"updated_at\": \"2023-10-11T13:30:00.000000Z\"\n        },\n        {\n            \"id\": 19,\n            \"user_id\": 3,\n            \"name\": \"Oscar\",\n            \"building_name\": \"Daisy\",\n            \"domicile\": \"Bandung\",\n            \"address\": \"Jl. Dr. Cipto No.12, Citarum, Bandung Wetan, Kota Bandung, Jawa Barat 40113\",\n            \"price\": 6000000,\n            \"capacity\": 55,\n            \"description\": \"Oscar is situated at the Daisy Building, suitable for workshops and conferences.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T13:45:00.000000Z\",\n            \"updated_at\": \"2023-10-11T13:45:00.000000Z\"\n        },\n        {\n            \"id\": 20,\n            \"user_id\": 2,\n            \"name\": \"Pandu\",\n            \"building_name\": \"Magnolia\",\n            \"domicile\": \"Jakarta\",\n            \"address\": \"Jl. Gatot Subroto No.88, RT.6/RW.2, Bendungan Hilir, Kec. Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10210\",\n            \"price\": 7000000,\n            \"capacity\": 65,\n            \"description\": \"Pandu is located at the Magnolia Hotel with well-equipped meeting rooms and amenities.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T14:00:00.000000Z\",\n            \"updated_at\": \"2023-10-11T14:00:00.000000Z\"\n        },\n        {\n            \"id\": 21,\n            \"user_id\": 2,\n            \"name\": \"Queenie\",\n            \"building_name\": \"Peony\",\n            \"domicile\": \"Surabaya\",\n            \"address\": \"Jl. Siwalankerto No.29, Siwalankerto, Surabaya, Jawa Timur 60237\",\n            \"price\": 6500000,\n            \"capacity\": 60,\n            \"description\": \"Queenie is situated at the Peony Hotel with versatile meeting spaces and modern facilities.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T14:15:00.000000Z\",\n            \"updated_at\": \"2023-10-11T14:15:00.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"user_id\": 1,\n            \"name\": \"Sazara\",\n            \"building_name\": \"Melati\",\n            \"domicile\": \"Jakarta\",\n            \"address\": \"Jl. Prapanca Raya No.3, RT.11/RW.1, Petogogan, Kec. Kby. Baru, Bandung\",\n            \"price\": 8000000,\n            \"capacity\": 75,\n            \"description\": \"Sazara located at the MelatiBuilding where there are many complete facilities for important activities.\",\n            \"status\": 1,\n            \"created_at\": \"2023-10-11T10:53:01.000000Z\",\n            \"updated_at\": \"2023-10-11T10:53:01.000000Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Token Tidak Valid (User belum login)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/properties",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 08:09:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 08:09:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Token tidak valid\"\n}"
+						},
+						{
+							"name": "Data Property Kosong",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/properties",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 08:10:02 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 08:10:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"message\": \"Data property tidak ditemukan\",\n    \"data\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "17|4tw7qGpY7iLIYr6le0khNjYeCRPA8vj20XaHhOBS4115272a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/properties/7",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"properties",
+								"7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get Detail Property",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/properties/2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 10:28:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 10:28:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data ditemukan\",\n    \"data\": {\n        \"id\": 2,\n        \"user_id\": 1,\n        \"name\": \"Azzahra\",\n        \"building_name\": \"Cempaka\",\n        \"domicile\": \"Medan\",\n        \"address\": \"Jl. Iskandar Muda No.7, Petisah Hulu, Kec. Medan Baru, Kota Medan, Sumatera Utara 20153\",\n        \"price\": 5000000,\n        \"capacity\": 55,\n        \"description\": \"Azzahra is located at the Cempaka Hotel where there are many complete facilities for important meetings and meetings 2 floors 1 Bathroom 3 Rooms 1 Kitchen\",\n        \"status\": 1,\n        \"created_at\": \"2023-10-11T10:25:30.000000Z\",\n        \"updated_at\": \"2023-10-11T10:25:30.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "18|9ln3dsYOgHlpb1C3odiyYHeSFciGVDiwRAsFT4eA0e550946",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Gedung Sultan 2",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jakarta",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10000000",
+									"type": "text"
+								},
+								{
+									"key": "capacity",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Fasilitas Lengkap",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/properties",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"properties"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Post Property",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Azzahra",
+											"type": "text"
+										},
+										{
+											"key": "building_name",
+											"value": "Cempaka",
+											"type": "text"
+										},
+										{
+											"key": "domicile",
+											"value": "Medan",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Jl. Iskandar Muda No.7, Petisah Hulu, Kec. Medan Baru, Kota Medan, Sumatera Utara 20153",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "5000000",
+											"type": "text"
+										},
+										{
+											"key": "capacity",
+											"value": "55",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Azzahra is located at the Cempaka Hotel where there are many complete facilities for important meetings and meetings 2 floors 1 Bathroom 3 Rooms 1 Kitchen",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/properties",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 10:25:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 10:25:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data property berhasil disimpan\",\n    \"data\": {\n        \"user_id\": 1,\n        \"name\": \"Azzahra\",\n        \"building_name\": \"Cempaka\",\n        \"domicile\": \"Medan\",\n        \"address\": \"Jl. Iskandar Muda No.7, Petisah Hulu, Kec. Medan Baru, Kota Medan, Sumatera Utara 20153\",\n        \"price\": \"5000000\",\n        \"capacity\": \"55\",\n        \"description\": \"Azzahra is located at the Cempaka Hotel where there are many complete facilities for important meetings and meetings 2 floors 1 Bathroom 3 Rooms 1 Kitchen\",\n        \"status\": \"1\",\n        \"updated_at\": \"2023-10-11T10:25:30.000000Z\",\n        \"created_at\": \"2023-10-11T10:25:30.000000Z\",\n        \"id\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|9qO26kWBDgcVLsgHINjBcLxFUFzen6GxKerFZXEZ30f06ea5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Gedung Sultan CUY 2",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jakarta",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "20000000",
+									"type": "text"
+								},
+								{
+									"key": "capacity",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Fasilitas Lengkap",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/properties/14",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"properties",
+								"14"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Property",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "user_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "Gedung Sultan CUY 2",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Jakarta",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "20000000",
+											"type": "text"
+										},
+										{
+											"key": "capacity",
+											"value": "200",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Fasilitas Lengkap",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/properties/22",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties",
+										"22"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 10:58:52 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 10:58:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data property berhasil diupdate\",\n    \"data\": {\n        \"id\": 22,\n        \"user_id\": 1,\n        \"name\": \"Gedung Sultan CUY 2\",\n        \"building_name\": \"Kemuning 3123\",\n        \"domicile\": \"Bogor\",\n        \"address\": \"Jakarta\",\n        \"price\": \"20000000\",\n        \"capacity\": \"200\",\n        \"description\": \"Fasilitas Lengkap\",\n        \"status\": \"1\",\n        \"created_at\": \"2023-10-11T10:58:25.000000Z\",\n        \"updated_at\": \"2023-10-11T10:58:52.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Property",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "17|4tw7qGpY7iLIYr6le0khNjYeCRPA8vj20XaHhOBS4115272a",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/properties/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"properties",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Delete Property",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/properties/22",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties",
+										"22"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 10:59:08 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 10:59:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data property berhasil dihapus\",\n    \"data\": {\n        \"id\": 22,\n        \"user_id\": 1,\n        \"name\": \"Gedung Sultan CUY 2\",\n        \"building_name\": \"Kemuning 3123\",\n        \"domicile\": \"Bogor\",\n        \"address\": \"Jakarta\",\n        \"price\": 20000000,\n        \"capacity\": 200,\n        \"description\": \"Fasilitas Lengkap\",\n        \"status\": 1,\n        \"created_at\": \"2023-10-11T10:58:25.000000Z\",\n        \"updated_at\": \"2023-10-11T10:58:52.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Fasiities",
+			"item": [
+				{
+					"name": "Get List Facility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|9qO26kWBDgcVLsgHINjBcLxFUFzen6GxKerFZXEZ30f06ea5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/properties/3/facilities",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"properties",
+								"3",
+								"facilities"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get List Facility",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/properties/2/facilities",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties",
+										"2",
+										"facilities"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:01:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:01:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data facility ditemukan\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"property_id\": 2,\n            \"name\": \"AC\",\n            \"qty\": 10,\n            \"description\": \"2 PK\",\n            \"created_at\": \"2023-10-11T12:50:02.000000Z\",\n            \"updated_at\": \"2023-10-11T12:50:02.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"property_id\": 2,\n            \"name\": \"Ruang Rapat\",\n            \"qty\": 2,\n            \"description\": \"Bersih dan Nyaman\",\n            \"created_at\": \"2023-10-11T12:50:25.000000Z\",\n            \"updated_at\": \"2023-10-11T12:50:25.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Fasility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|9qO26kWBDgcVLsgHINjBcLxFUFzen6GxKerFZXEZ30f06ea5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "AC",
+									"type": "text"
+								},
+								{
+									"key": "qty",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "2 PK",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/properties/3/facilities",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"properties",
+								"3",
+								"facilities"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess Create Facility",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Ruang Rapat",
+											"type": "text"
+										},
+										{
+											"key": "qty",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Bersih dan Nyaman",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/properties/2/facilities",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties",
+										"2",
+										"facilities"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 12:50:25 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 12:50:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data facility berhasil disimpan\",\n    \"data\": {\n        \"property_id\": \"2\",\n        \"name\": \"Ruang Rapat\",\n        \"qty\": \"2\",\n        \"description\": \"Bersih dan Nyaman\",\n        \"updated_at\": \"2023-10-11T12:50:25.000000Z\",\n        \"created_at\": \"2023-10-11T12:50:25.000000Z\",\n        \"id\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Detail Facility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|9qO26kWBDgcVLsgHINjBcLxFUFzen6GxKerFZXEZ30f06ea5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/properties/3/facilities/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"properties",
+								"3",
+								"facilities",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get List Facility Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/properties/3/facilities/6",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties",
+										"3",
+										"facilities",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:02:09 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:02:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data facility ditemukan\",\n    \"data\": {\n        \"id\": 6,\n        \"property_id\": 3,\n        \"name\": \"Layar Proyektor\",\n        \"qty\": 1,\n        \"description\": \"Layar proyektor yang besar dan jelas\",\n        \"created_at\": \"2023-10-11T05:50:25.000000Z\",\n        \"updated_at\": \"2023-10-11T05:50:25.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Facility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|9qO26kWBDgcVLsgHINjBcLxFUFzen6GxKerFZXEZ30f06ea5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ruang ibadah",
+									"type": "text"
+								},
+								{
+									"key": "qty",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/properties/3/facilities/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"properties",
+								"3",
+								"facilities",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Update Facility",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Ruang Presentasi",
+											"type": "text"
+										},
+										{
+											"key": "qty",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Fasilitas memadai dengan layar proyektor dan internet",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/properties/3/facilities/6",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties",
+										"3",
+										"facilities",
+										"6"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:03:34 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:03:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data facility berhasil diupdate\",\n    \"data\": {\n        \"id\": 6,\n        \"property_id\": \"3\",\n        \"name\": \"Ruang Presentasi\",\n        \"qty\": \"3\",\n        \"description\": \"Fasilitas memadai dengan layar proyektor dan internet\",\n        \"created_at\": \"2023-10-11T05:50:25.000000Z\",\n        \"updated_at\": \"2023-10-11T13:03:34.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Facility",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Success Delete Facility",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/properties/3/facilities/6",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"properties",
+										"3",
+										"facilities",
+										"6"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 05:59:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 05:59:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data facility berhasil dihapus\",\n    \"data\": {\n        \"id\": 6,\n        \"property_id\": 3,\n        \"name\": \"Ruang ibadah\",\n        \"qty\": 1,\n        \"description\": null,\n        \"created_at\": \"2023-10-11T04:31:32.000000Z\",\n        \"updated_at\": \"2023-10-11T05:56:22.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Get Booking List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|rIUa3MhMAlPizZjiTy0ui7YcAG6A6Mh09GPxUm0saef67963",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/bookings",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get Booking List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/bookings",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"bookings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:32:41 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:32:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data booking ditemukan\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"property_id\": 2,\n            \"user_id\": 4,\n            \"booking_date\": \"2023-10-11\",\n            \"start_date\": \"2023-10-12\",\n            \"end_date\": \"2023-12-12\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T13:04:49.000000Z\",\n            \"updated_at\": \"2023-10-11T13:04:49.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"property_id\": 2,\n            \"user_id\": 4,\n            \"booking_date\": \"2023-10-12\",\n            \"start_date\": \"2023-10-14\",\n            \"end_date\": \"2023-10-16\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T08:00:00.000000Z\",\n            \"updated_at\": \"2023-10-11T08:00:00.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"property_id\": 4,\n            \"user_id\": 5,\n            \"booking_date\": \"2023-10-14\",\n            \"start_date\": \"2023-10-16\",\n            \"end_date\": \"2023-10-18\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T08:15:00.000000Z\",\n            \"updated_at\": \"2023-10-11T08:15:00.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"property_id\": 6,\n            \"user_id\": 6,\n            \"booking_date\": \"2023-10-16\",\n            \"start_date\": \"2023-10-18\",\n            \"end_date\": \"2023-12-20\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T08:30:00.000000Z\",\n            \"updated_at\": \"2023-10-11T08:30:00.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"property_id\": 8,\n            \"user_id\": 7,\n            \"booking_date\": \"2023-10-18\",\n            \"start_date\": \"2023-10-20\",\n            \"end_date\": \"2023-11-22\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T08:45:00.000000Z\",\n            \"updated_at\": \"2023-10-11T08:45:00.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"property_id\": 10,\n            \"user_id\": 8,\n            \"booking_date\": \"2023-10-20\",\n            \"start_date\": \"2023-10-22\",\n            \"end_date\": \"2023-12-24\",\n            \"status\": \"canceled\",\n            \"created_at\": \"2023-10-11T09:00:00.000000Z\",\n            \"updated_at\": \"2023-10-11T09:00:00.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"property_id\": 12,\n            \"user_id\": 4,\n            \"booking_date\": \"2023-10-22\",\n            \"start_date\": \"2023-10-24\",\n            \"end_date\": \"2023-12-26\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T09:15:00.000000Z\",\n            \"updated_at\": \"2023-10-11T09:15:00.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"property_id\": 14,\n            \"user_id\": 5,\n            \"booking_date\": \"2023-10-24\",\n            \"start_date\": \"2023-10-26\",\n            \"end_date\": \"2024-01-28\",\n            \"status\": \"canceled\",\n            \"created_at\": \"2023-10-11T09:30:00.000000Z\",\n            \"updated_at\": \"2023-10-11T09:30:00.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"property_id\": 16,\n            \"user_id\": 6,\n            \"booking_date\": \"2023-10-26\",\n            \"start_date\": \"2023-10-28\",\n            \"end_date\": \"2025-10-30\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T09:45:00.000000Z\",\n            \"updated_at\": \"2023-10-11T09:45:00.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"property_id\": 18,\n            \"user_id\": 7,\n            \"booking_date\": \"2023-10-28\",\n            \"start_date\": \"2023-10-30\",\n            \"end_date\": \"2024-12-01\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T10:00:00.000000Z\",\n            \"updated_at\": \"2023-10-11T10:00:00.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"property_id\": 20,\n            \"user_id\": 8,\n            \"booking_date\": \"2023-10-30\",\n            \"start_date\": \"2023-11-01\",\n            \"end_date\": \"2024-11-03\",\n            \"status\": \"finished\",\n            \"created_at\": \"2023-10-11T10:15:00.000000Z\",\n            \"updated_at\": \"2023-10-11T10:15:00.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"property_id\": 3,\n            \"user_id\": 4,\n            \"booking_date\": \"2023-11-01\",\n            \"start_date\": \"2023-11-03\",\n            \"end_date\": \"2023-12-05\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T10:30:00.000000Z\",\n            \"updated_at\": \"2023-10-11T10:30:00.000000Z\"\n        },\n        {\n            \"id\": 14,\n            \"property_id\": 5,\n            \"user_id\": 5,\n            \"booking_date\": \"2023-11-03\",\n            \"start_date\": \"2023-11-05\",\n            \"end_date\": \"2024-01-07\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T10:45:00.000000Z\",\n            \"updated_at\": \"2023-10-11T10:45:00.000000Z\"\n        },\n        {\n            \"id\": 15,\n            \"property_id\": 7,\n            \"user_id\": 6,\n            \"booking_date\": \"2023-11-05\",\n            \"start_date\": \"2023-11-07\",\n            \"end_date\": \"2024-02-09\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T11:00:00.000000Z\",\n            \"updated_at\": \"2023-10-11T11:00:00.000000Z\"\n        },\n        {\n            \"id\": 16,\n            \"property_id\": 9,\n            \"user_id\": 7,\n            \"booking_date\": \"2023-11-07\",\n            \"start_date\": \"2023-11-09\",\n            \"end_date\": \"2024-03-11\",\n            \"status\": \"booked\",\n            \"created_at\": \"2023-10-11T11:15:00.000000Z\",\n            \"updated_at\": \"2023-10-11T11:15:00.000000Z\"\n        },\n        {\n            \"id\": 17,\n            \"property_id\": 11,\n            \"user_id\": 8,\n            \"booking_date\": \"2023-11-09\",\n            \"start_date\": \"2023-11-11\",\n            \"end_date\": \"2025-11-13\",\n            \"status\": \"finished\",\n            \"created_at\": \"2023-10-11T11:30:00.000000Z\",\n            \"updated_at\": \"2023-10-11T11:30:00.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|rIUa3MhMAlPizZjiTy0ui7YcAG6A6Mh09GPxUm0saef67963",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "property_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2023-10-12",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2023-12-12",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "booked",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/bookings",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Create Booking",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "property_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "start_date",
+											"value": "2023-10-12",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "2023-12-12",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "booked",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/bookings",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"bookings"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:04:49 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:04:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data booking berhasil disimpan\",\n    \"data\": {\n        \"user_id\": 1,\n        \"property_id\": \"2\",\n        \"booking_date\": \"2023-10-11T13:04:49.719632Z\",\n        \"start_date\": \"2023-10-12\",\n        \"end_date\": \"2023-12-12\",\n        \"status\": \"booked\",\n        \"updated_at\": \"2023-10-11T13:04:49.000000Z\",\n        \"created_at\": \"2023-10-11T13:04:49.000000Z\",\n        \"id\": 2\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Booking Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|rIUa3MhMAlPizZjiTy0ui7YcAG6A6Mh09GPxUm0saef67963",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/bookings/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Get Booking Detail",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/bookings/12",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"bookings",
+										"12"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:33:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:33:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data booking ditemukan\",\n    \"data\": {\n        \"id\": 12,\n        \"property_id\": 20,\n        \"user_id\": 8,\n        \"booking_date\": \"2023-10-30\",\n        \"start_date\": \"2023-11-01\",\n        \"end_date\": \"2024-11-03\",\n        \"status\": \"finished\",\n        \"created_at\": \"2023-10-11T10:15:00.000000Z\",\n        \"updated_at\": \"2023-10-11T10:15:00.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|rIUa3MhMAlPizZjiTy0ui7YcAG6A6Mh09GPxUm0saef67963",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "start_date",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/bookings/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Update Booking",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "start_date",
+											"value": "2023-10-16",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "2023-12-16",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "finished",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/api/bookings/18",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"bookings",
+										"18"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:34:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:34:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data booking berhasil diupdate\",\n    \"data\": {\n        \"id\": 18,\n        \"property_id\": 21,\n        \"user_id\": 1,\n        \"booking_date\": \"2023-10-11\",\n        \"start_date\": \"2023-10-16\",\n        \"end_date\": \"2023-12-16\",\n        \"status\": \"finished\",\n        \"created_at\": \"2023-10-11T13:33:53.000000Z\",\n        \"updated_at\": \"2023-10-11T13:34:17.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Booking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|rIUa3MhMAlPizZjiTy0ui7YcAG6A6Mh09GPxUm0saef67963",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/bookings/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Delete Booking",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/bookings/18",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"bookings",
+										"18"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:34:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 11 Oct 2023 13:34:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Data booking berhasil dihapus\",\n    \"data\": {\n        \"id\": 18,\n        \"property_id\": 21,\n        \"user_id\": 1,\n        \"booking_date\": \"2023-10-11\",\n        \"start_date\": \"2023-10-16\",\n        \"end_date\": \"2023-12-16\",\n        \"status\": \"finished\",\n        \"created_at\": \"2023-10-11T13:33:53.000000Z\",\n        \"updated_at\": \"2023-10-11T13:34:17.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
