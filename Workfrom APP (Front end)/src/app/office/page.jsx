@@ -1,27 +1,30 @@
 'use client'
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from "next/link";
 import axios from 'axios';
 import Maps from "../../components/maps";
 import Navbar from "../../components/navbar";
 import { BiMap } from 'react-icons/bi';
 import { BsFillBuildingFill } from 'react-icons/bs';
 import { FaPerson } from 'react-icons/fa6';
-import BASE_URL from "../../components/config";
+import {BASE_URL} from "../../components/config";
 
 function office() {
     const [data, setData] = useState([]);
+    // const router = useRouter();
 
     function formatToRupiah(price) {
         const formatter = new Intl.NumberFormat('id-ID', {
-          style: 'currency',
-          currency: 'IDR',
+            style: 'currency',
+            currency: 'IDR',
         });
         return formatter.format(price);
-      }
+    }
 
     const fetchData = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/properties`);
+            const response = await axios.get(`${BASE_URL}properties`);
             setData(response.data.data);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -29,7 +32,7 @@ function office() {
         }
     };
 
-    const fetch = data.data;
+    // console.log(BASE_URL)
 
     useEffect(() => {
         fetchData();
@@ -151,7 +154,7 @@ function office() {
                                             <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[50%] justify-center">
                                                 Chat
                                             </a>
-                                            <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[50%] justify-center ml-2">
+                                            <a href={`/detail?param=${item.id}`} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[50%] justify-center ml-2">
                                                 Detail
                                             </a>
                                         </div>

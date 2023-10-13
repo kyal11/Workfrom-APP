@@ -1,5 +1,8 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import axios from 'axios';
+import { BASE_URL } from "../../components/config";
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
 import { FaShareSquare } from 'react-icons/fa';
@@ -12,6 +15,13 @@ import { BsFillBuildingFill, BsFillChatLeftTextFill } from 'react-icons/bs';
 import Navbar from "../../components/navbar";
 
 function detail() {
+    const [dataf, setData] = useState([]);
+    const router = useRouter();
+    // const searchParams = new URLSearchParams(window.location.search);
+    // const paramValue = searchParams.get("param");
+    // console.log(paramValue)
+
+
     const slides = [
         {
             url: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2620&q=80',
@@ -48,6 +58,31 @@ function detail() {
     const goToSlide = (slideIndex) => {
         setCurrentIndex(slideIndex);
     };
+
+    function formatToRupiah(price) {
+        const formatter = new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+        });
+        return formatter.format(price);
+    }
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`${BASE_URL}properties/3`);
+            setData(response.data.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            setData([]); // Atau atur ke default yang sesuai
+        }
+    };
+
+    console.log(dataf)
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     return (
         <div className=' '>
             <Navbar />
@@ -82,7 +117,7 @@ function detail() {
                 <div className=''>
                     <div className='ml-6'>
                         <div className=' text-blue-700'>
-                            <h1 className='md:text-2xl lg:text-4xl font-extrabold text-2xl'>Azzahra</h1>
+                            <h1 className='md:text-2xl lg:text-4xl font-extrabold text-2xl'>Sazara</h1>
                         </div>
                         <div className=' grid grid-cols-4 gap-4'>
                             <div class="flex items-center mt-2 col-span-3">
@@ -149,7 +184,7 @@ function detail() {
                         <div className=''>
                             <p class="line-through ml-6">Rp. 8.500.000</p>
                             <div className='flex'>
-                                <MdOutlineDiscount className=' text-2xl'/>
+                                <MdOutlineDiscount className=' text-2xl' />
                                 <h1 className=' font-extrabold text-blue-600 text-2xl'> Rp. 5.000.000</h1>
                             </div>
                         </div>
