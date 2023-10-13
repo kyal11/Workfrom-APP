@@ -23,9 +23,12 @@ $ git clone https://github.com/kyal11/Workfrom-APP.git
 ```
 2. Import Database Mysql (workfromdb.sql)
 3. Install Backend
-```
 Change into the working directory
+```
 cd WorkFrom RestFull API (Backend)
+```
+Install module Laravel
+```
 composer install
 ```
 4. Run the Backend
@@ -37,10 +40,13 @@ php artisan serve
 http://localhost:8000/api
 ```
 5. Install Front End
-```
 Change into the working directory
+```
 cd ..
 cd Workfrom APP (Front end)
+```
+Install Module Next JS
+```
 npm install
 ```
 6. Run the Front End
