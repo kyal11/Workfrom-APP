@@ -1,11 +1,12 @@
 'use client'
 
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/navigation';
 
 const navigation = [
-    { name: 'Home', href: '#', current: false },
+    { name: 'Home', href: '/', current: false },
     { name: 'About', href: '#', current: false },
     { name: 'Service', href: '#', current: false },
     { name: 'Contact', href: '#', current: false },
@@ -16,6 +17,11 @@ function classNames(...classes) {
 }
 
 export default function navbar() {
+    const router = useRouter();
+    const logout = () => {
+        localStorage.removeItem('token');
+        router.push('/')
+    };
     return (
         <Disclosure as="nav" className="bg-[#D9D9D9]">
             {({ open }) => (
@@ -36,11 +42,13 @@ export default function navbar() {
                             </div>
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
-                                    <img
-                                        className="h-8 w-auto"
-                                        src="https://workfrom.id/wp-content/uploads/2022/12/Logo-WF.png"
-                                        alt="Your Company"
-                                    />
+                                    <a href="/">
+                                        <img
+                                            className="h-8 w-auto"
+                                            src="https://workfrom.id/wp-content/uploads/2022/12/Logo-WF.png"
+                                            alt="Your Company"
+                                        />
+                                    </a>
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -88,6 +96,9 @@ export default function navbar() {
                                                         {item.name}
                                                     </a>
                                                 ))}
+                                                <a onClick={logout} className='text-blue-600 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium' >
+                                                    Logout
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

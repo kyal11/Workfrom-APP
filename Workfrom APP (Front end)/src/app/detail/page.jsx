@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import axios from 'axios';
 import { BASE_URL } from "../../components/config";
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
@@ -15,12 +15,34 @@ import { BsFillBuildingFill, BsFillChatLeftTextFill } from 'react-icons/bs';
 import Navbar from "../../components/navbar";
 
 function detail() {
-    const [dataf, setData] = useState([]);
-    const router = useRouter();
-    // const searchParams = new URLSearchParams(window.location.search);
-    // const paramValue = searchParams.get("param");
-    // console.log(paramValue)
+    const searchParams = useSearchParams()
+    const id = searchParams.get('param')
+    const [data, setData] = useState([]);
+    // const router = useRouter();
 
+    function formatToRupiah(price) {
+        const formatter = new Intl.NumberFormat('id-ID', {
+            style: 'currency',
+            currency: 'IDR',
+        });
+        return formatter.format(price);
+    }
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`${BASE_URL}properties/${id}`);
+            setData(response.data.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            setData([]); // Atau atur ke default yang sesuai
+        }
+    };
+
+    console.log(id)
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     const slides = [
         {
@@ -59,30 +81,6 @@ function detail() {
         setCurrentIndex(slideIndex);
     };
 
-    function formatToRupiah(price) {
-        const formatter = new Intl.NumberFormat('id-ID', {
-            style: 'currency',
-            currency: 'IDR',
-        });
-        return formatter.format(price);
-    }
-
-    const fetchData = async () => {
-        try {
-            const response = await axios.get(`${BASE_URL}properties/3`);
-            setData(response.data.data);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            setData([]); // Atau atur ke default yang sesuai
-        }
-    };
-
-    console.log(dataf)
-
-    useEffect(() => {
-        fetchData();
-    }, []);
-
     return (
         <div className=' '>
             <Navbar />
@@ -117,7 +115,7 @@ function detail() {
                 <div className=''>
                     <div className='ml-6'>
                         <div className=' text-blue-700'>
-                            <h1 className='md:text-2xl lg:text-4xl font-extrabold text-2xl'>Sazara</h1>
+                            <h1 className='md:text-2xl lg:text-4xl font-extrabold text-2xl'>{data.name}</h1>
                         </div>
                         <div className=' grid grid-cols-4 gap-4'>
                             <div class="flex items-center mt-2 col-span-3">
@@ -147,18 +145,18 @@ function detail() {
                         <div>
                             <div className=' flex mt-2'>
                                 <BiMap className='mr-2 mt-1' />
-                                <h1> Medan</h1>
+                                <h1>{data.domicile}</h1>
                             </div>
                             <div>
                                 <h2 className=' w-[450px]'>
-                                    Jl. Iskandar Muda No.7, Petisah Hulu, Kec. Medan Baru, Kota Medan, Sumatera Utara 20153
+                                    {data.address}
                                 </h2>
                             </div>
                         </div>
                         <div>
                             <div className=' flex mt-2'>
                                 <BsFillBuildingFill className='mr-2 mt-1' />
-                                <h1> Cempaka</h1>
+                                <h1>{data.building_name}</h1>
                             </div>
                         </div>
                         <div>
@@ -167,28 +165,28 @@ function detail() {
                             </div>
                             <div>
                                 <h2 className=' w-[450px]'>
-                                    Azzahra is located at the Cempaka Hotel where there are many complete facilities for important meetings and meetings
+                                    {data.description}
                                 </h2>
                             </div>
-                            <ul class="list-disc ml-6 mt-2">
+                            {/* <ul class="list-disc ml-6 mt-2">
                                 <li>2 floors</li>
                                 <li>1 Bathroom</li>
                                 <li>3 Rooms</li>
                                 <li>1 Kitchen</li>
-                            </ul>
+                            </ul> */}
                         </div>
                         <div className=' flex mt-2'>
                             <FaPerson className="mr-2" />
-                            <h1 className=' font-extrabold'> 55 People</h1>
+                            <h1 className=' font-extrabold'> {data.capacity} People</h1>
                         </div>
                         <div className=''>
                             <p class="line-through ml-6">Rp. 8.500.000</p>
                             <div className='flex'>
                                 <MdOutlineDiscount className=' text-2xl' />
-                                <h1 className=' font-extrabold text-blue-600 text-2xl'> Rp. 5.000.000</h1>
+                                <h1 className=' font-extrabold text-blue-600 text-2xl'>{formatToRupiah(data.price)}</h1>
                             </div>
                         </div>
-                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 mt-2 w-full flex items-center justify-center"><BsFillChatLeftTextFill className=' mr-2' /> Chat </button>
+                        <a href='/chat' class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 mt-2 w-full flex items-center justify-center"><BsFillChatLeftTextFill className=' mr-2' /> Chat </a>
                     </div>
                 </div>
             </div>

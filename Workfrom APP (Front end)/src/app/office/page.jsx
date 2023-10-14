@@ -8,11 +8,11 @@ import Navbar from "../../components/navbar";
 import { BiMap } from 'react-icons/bi';
 import { BsFillBuildingFill } from 'react-icons/bs';
 import { FaPerson } from 'react-icons/fa6';
-import {BASE_URL} from "../../components/config";
+import { BASE_URL } from "../../components/config";
 
 function office() {
     const [data, setData] = useState([]);
-    // const router = useRouter();
+    const router = useRouter();
 
     function formatToRupiah(price) {
         const formatter = new Intl.NumberFormat('id-ID', {
@@ -32,7 +32,10 @@ function office() {
         }
     };
 
-    // console.log(BASE_URL)
+    const logout = () => {
+        localStorage.removeItem('token');
+        router.push('/')
+    };
 
     useEffect(() => {
         fetchData();
@@ -151,7 +154,7 @@ function office() {
                                             <h1 className=' font-extrabold text-blue-600 text-sm mt-1'>{formatToRupiah(item.price)}</h1>
                                         </div>
                                         <div className=' flex items-center justify-center'>
-                                            <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[50%] justify-center">
+                                            <a href="/chat" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[50%] justify-center">
                                                 Chat
                                             </a>
                                             <a href={`/detail?param=${item.id}`} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-[50%] justify-center ml-2">
