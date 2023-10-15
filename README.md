@@ -57,3 +57,9 @@ npm run dev
 ```
 http://localhost:3000
 ```
+## Author
+
+👤 **TeguhA10**
+👤 **Kyal11**
+
+* Github: [@TeguhA10](https://github.com/TeguhA10) [@Kyal11](https://github.com/kyal11)
