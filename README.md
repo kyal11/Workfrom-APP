@@ -61,5 +61,5 @@ http://localhost:3000
 
 👤 **TeguhA10**
 👤 **Kyal11**
-
-* Github: [@TeguhA10](https://github.com/TeguhA10) [@Kyal11](https://github.com/kyal11)
+👤 **andragastia**
+* Github: [@TeguhA10](https://github.com/TeguhA10) [@Kyal11](https://github.com/kyal11) [@andragastia](http://github.com/andragastia)
